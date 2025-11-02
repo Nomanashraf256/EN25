@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numan & Elif - Husband & Wife</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+            transition: background 1.5s ease;
+        }
+
+        /* Theme 1: Royal Purple */
+        body.theme-1 {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+        }
+
+        /* Theme 2: Elegant Gold */
+        body.theme-2 {
+            background: linear-gradient(135deg, #0f4c75, #3282b8, #bbe1fa);
+        }
+
+        /* Theme 3: Romantic Blush */
+        body.theme-3 {
+            background: linear-gradient(135deg, #614385, #516395, #7b4397);
+        }
+
+        /* Theme 4: Emerald Elegance */
+        body.theme-4 {
+            background: linear-gradient(135deg, #1d976c, #93f9b9, #11998e);
+        }
+
+        /* Theme 5: Sunset Romance */
+        body.theme-5 {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcf7f);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .header-content {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            color: #ffd700;
+            transition: all 0.5s ease;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            transition: all 0.5s ease;
+        }
+
+        .couple-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .person {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            width: 280px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease, background 0.5s ease;
+        }
+
+        .person:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .person img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffd700;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+            transition: all 0.5s ease;
+        }
+
+        .person h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 20px 0 10px;
+            color: #ffd700;
+            transition: all 0.5s ease;
+        }
+
+        .person p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            transition: all 0.5s ease;
+        }
+
+        .heart {
+            font-size: 3rem;
+            color: #ff6b6b;
+            animation: heartbeat 1.5s infinite;
+            transition: all 0.5s ease;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .islamic-elements {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .islamic-elements i {
+            font-size: 3rem;
+            margin: 0 20px;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            transition: all 0.5s ease;
+        }
+
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            text-align: center;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border-left: 5px solid #ffd700;
+            line-height: 1.6;
+            transition: all 0.5s ease;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 50px 0;
+        }
+
+        .gallery-item {
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        /* Floral Animation */
+        .flower {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.7;
+            z-index: 1;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
+        /* Crescent Moon Animation */
+        .moon {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 30px #ffd700;
+            top: 10%;
+            right: 10%;
+            z-index: 1;
+            animation: moonGlow 4s infinite alternate;
+            transition: all 0.5s ease;
+        }
+
+        .moon::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: #1a2a6c;
+            border-radius: 50%;
+            top: 5px;
+            right: 15px;
+            transition: all 0.5s ease;
+        }
+
+        @keyframes moonGlow {
+            0% {
+                box-shadow: 0 0 20px #ffd700;
+            }
+            100% {
+                box-shadow: 0 0 40px #ffd700, 0 0 60px #ffd700;
+            }
+        }
+
+        /* Theme Indicator */
+        .theme-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+            transition: all 0.5s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .person {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .quote {
+                font-size: 1.4rem;
+            }
+            
+            .theme-indicator {
+                top: 10px;
+                right: 10px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body class="theme-1">
+    <!-- Theme Indicator -->
+    <div class="theme-indicator">Theme: Royal Purple</div>
+    
+    <!-- Background Floral Animation -->
+    <div id="floral-background"></div>
+    
+    <!-- Crescent Moon -->
+    <div class="moon"></div>
+    
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Numan & Elif</h1>
+                <p class="subtitle">Husband & Wife</p>
+                <p>United in love and faith on 5th May 2025 and have Imam Nikah on 17th November 2025</p>
+            </div>
+        </header>
+        
+        <div class="couple-container">
+            <div class="person">
+                <img src="Elif.jpg" alt="Elif">
+                <h2>Elif</h2>
+                <p>The Beautiful Bride</p>
+            </div>
+            
+            <div class="heart">
+                <i class="fas fa-heart"></i>
+            </div>
+            
+            <div class="person">
+                <img src="Numan.jpg" alt="Numan">
+                <h2>Numan</h2>
+                <p>The Handsome Groom</p>
+            </div>
+        </div>
+        
+        <div class="islamic-elements">
+            <i class="fas fa-star-and-crescent"></i>
+            <i class="fas fa-mosque"></i>
+            <i class="fas fa-quran"></i>
+            <i class="fas fa-pray"></i>
+            <i class="fas fa-hands-praying"></i>
+        </div>
+        
+        <div class="quote">
+            "And one of His signs is that He created for you spouses from among yourselves so that you may find comfort in them. And He has placed between you compassion and mercy. Surely in this are signs for people who reflect."
+            <br> - Quran (30:21)
+        </div>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="Flower.jpg" alt="Wedding Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="Child.jpg" alt="Wedding Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="Ciko.jpg" alt="Wedding Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="Image for Quran.jpg" alt="Wedding Image 4">
+            </div>     
+        </div>
+        
+        <footer>
+            <p>May Allah bless this union with love, happiness, and prosperity</p>
+            <p>© 2025 Elif & Numan - Together Forever</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme management
+        const themes = [
+            { 
+                name: "Royal Purple", 
+                class: "theme-1",
+                accentColor: "#ffd700",
+                moonColor: "#ffd700",
+                moonShadow: "#1a2a6c"
+            },
+            { 
+                name: "Elegant Gold", 
+                class: "theme-2",
+                accentColor: "#bbe1fa",
+                moonColor: "#bbe1fa",
+                moonShadow: "#0f4c75"
+            },
+            { 
+                name: "Romantic Blush", 
+                class: "theme-3",
+                accentColor: "#d4af37",
+                moonColor: "#d4af37",
+                moonShadow: "#614385"
+            },
+            { 
+                name: "Emerald Elegance", 
+                class: "theme-4",
+                accentColor: "#93f9b9",
+                moonColor: "#93f9b9",
+                moonShadow: "#1d976c"
+            },
+            { 
+                name: "Sunset Romance", 
+                class: "theme-5",
+                accentColor: "#ffd93d",
+                moonColor: "#ffd93d",
+                moonShadow: "#ff6b6b"
+            }
+        ];
+        
+        let currentThemeIndex = 0;
+        
+        function changeTheme() {
+            // Update theme index
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            const theme = themes[currentThemeIndex];
+            
+            // Update body class
+            document.body.className = theme.class;
+            
+            // Update theme indicator
+            document.querySelector('.theme-indicator').textContent = `Theme: ${theme.name}`;
+            
+            // Update accent colors
+            updateAccentColors(theme.accentColor);
+            
+            // Update moon colors
+            updateMoonColors(theme.moonColor, theme.moonShadow);
+        }
+        
+        function updateAccentColors(color) {
+            // Update all elements with accent colors
+            const accentElements = document.querySelectorAll('h1, .person h2, .islamic-elements i, .quote');
+            accentElements.forEach(el => {
+                if (el.classList.contains('islamic-elements')) {
+                    // For Islamic elements, update child icons
+                    const icons = el.querySelectorAll('i');
+                    icons.forEach(icon => {
+                        icon.style.color = color;
+                        icon.style.textShadow = `0 0 10px ${color}70`;
+                    });
+                } else {
+                    el.style.color = color;
+                    if (el.tagName === 'H1') {
+                        el.style.textShadow = `0 5px 15px rgba(0, 0, 0, 0.5)`;
+                    }
+                }
+            });
+            
+            // Update heart color
+            document.querySelector('.heart').style.color = color;
+            
+            // Update person image borders
+            const personImages = document.querySelectorAll('.person img');
+            personImages.forEach(img => {
+                img.style.borderColor = color;
+                img.style.boxShadow = `0 0 25px ${color}80`;
+            });
+            
+            // Update quote border
+            document.querySelector('.quote').style.borderLeftColor = color;
+        }
+        
+        function updateMoonColors(moonColor, shadowColor) {
+            const moon = document.querySelector('.moon');
+            moon.style.background = moonColor;
+            moon.style.boxShadow = `0 0 30px ${moonColor}`;
+            
+            const moonShadow = moon.querySelector('::after');
+            // We need to update the pseudo-element differently
+            const style = document.createElement('style');
+            style.textContent = `
+                .moon::after {
+                    background: ${shadowColor} !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Create floral animation
+        function createFlowers() {
+            const floralBackground = document.getElementById('floral-background');
+            const flowers = ['🌸', '🌺', '🌷', '🌹', '💐', '🥀', '🌼', '🌻'];
+            
+            for (let i = 0; i < 25; i++) {
+                const flower = document.createElement('div');
+                flower.classList.add('flower');
+                flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+                
+                // Random position and animation
+                flower.style.left = Math.random() * 100 + 'vw';
+                flower.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                flower.style.animationDuration = (Math.random() * 20 + 10) + 's';
+                flower.style.animationDelay = Math.random() * 5 + 's';
+                
+                floralBackground.appendChild(flower);
+            }
+        }
+        
+        // Initialize when page loads
+        window.onload = function() {
+            createFlowers();
+            
+            // Start theme rotation
+            setInterval(changeTheme, 10000); // Change theme every 10 seconds
+            
+            // Add floating hearts animation
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.style.position = 'fixed';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = '100vh';
+                heart.style.zIndex = '1';
+                heart.style.opacity = '0.7';
+                heart.style.pointerEvents = 'none';
+                
+                document.body.appendChild(heart);
+                
+                // Animate heart
+                const animation = heart.animate([
+                    { transform: 'translateY(0)', opacity: 0.7 },
+                    { transform: 'translateY(-100vh)', opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 3000,
+                    easing: 'linear'
+                });
+                
+                // Remove heart after animation
+                animation.onfinish = () => {
+                    heart.remove();
+                };
+            }, 500);
+        };
+    </script>
+</body>
+</html>
